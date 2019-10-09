@@ -13,7 +13,8 @@
     "dev": "concurrently -k \"npm run build:watch\" \"npm run start:dev\"",
     "test": "jest --runInBand",
     "test:watch": "jest --runInBand --watch",
-    "test:ci": "jest --passWithNoTests --collectCoverage --coverageReporters json --coverageDirectory ./coverage"
+    "test:ci": "jest --passWithNoTests --collectCoverage --coverageReporters json --coverageDirectory ./coverage",
+    "deploy:ci": "echo \"I did something along the lines of kubectl apply -f ./kube.yml\""
   },
   "repository": {
     "type": "git",
