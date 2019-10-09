@@ -34,6 +34,11 @@ jobs:
           at: /tmp/workspace
       - run: mv /tmp/workspace/node_modules .
       - run: yarn build:ci
+      - run:
+          name: Setup git-related config
+          command: |
+            git config --global user.email "${GITHUB_EMAIL}"
+            git config --global user.name "${GITHUB_USER}"
       - run: yarn new-version
       - run: yarn deploy:ci
 
