@@ -34,6 +34,7 @@ jobs:
           at: /tmp/workspace
       - run: mv /tmp/workspace/node_modules .
       - run: yarn build:ci
+      - run: yarn new-version
       - run: yarn deploy:ci
 
 workflows:
