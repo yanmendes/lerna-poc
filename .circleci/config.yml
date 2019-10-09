@@ -20,8 +20,8 @@ jobs:
           paths:
             - ~/.cache/yarn
           key: yarn-packages-v1-{{ .Branch }}-{{ checksum "yarn.lock" }}
-      - run: yarn run bootstrap
-      - run: yarn run test:ci
+      - run: yarn bootstrap
+      - run: yarn test:ci
       - run: mv node_modules /tmp/workspace
       - persist_to_workspace:
           root: /tmp/workspace
@@ -35,8 +35,8 @@ jobs:
       - attach_workspace:
           at: /tmp/workspace
       - run: mv /tmp/workspace/node_modules .
-      - run: yarn run build:ci
-      - run: yarn run deploy:ci
+      - run: yarn build:ci
+      - run: yarn deploy:ci
 
 workflows:
   version: 2
