@@ -27,6 +27,9 @@ jobs:
     docker:
       - image: circleci/node:10
     steps:
+      - add_ssh_keys:
+          fingerprints:
+            - "23:f0:ad:f1:66:87:fb:1d:2e:ba:b6:ac:2d:17:9d:88"
       - checkout:
           post:
             - git fetch --all
