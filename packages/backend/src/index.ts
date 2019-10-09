@@ -43,7 +43,7 @@ db.once('open', () => {
     (_, res, next) => (res.setHeader('cache-control', 'no-store'), next())
   )
 
-  const path = '/gql/mongo-api-template'
+  const path = '/gql/my-cool-api'
   server.applyMiddleware({ app, path })
 
   app.listen({ port }, () =>
