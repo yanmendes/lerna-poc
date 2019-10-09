@@ -8,7 +8,7 @@
     "bootstrap": "lerna bootstrap",
     "test:ci": "lerna run test:ci",
     "build:ci": "lerna run build:ci",
-    "deploy:ci": "lerna run deploy:ci --since $TAG",
+    "deploy:ci": "lerna run deploy:ci --since=$LAST_TAG",
     "new-version": "lerna version --conventional-commits --yes"
   },
   "workspaces": {

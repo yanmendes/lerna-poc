@@ -43,7 +43,7 @@ jobs:
       - run: yarn new-version
       - run: 
           name: Fetch the second newest git tag to deploy only modified packages
-          command: TAG=$(git describe --abbrev=0 --tags $(git rev-list --tags --max-count=2) | sed -n 2p)
+          command: echo 'export LAST_TAG=`git describe --abbrev=0 --tags $(git rev-list --tags --max-count=2) | sed -n 2p`' >> $BASH_ENV
       - run: yarn deploy:ci
 
 workflows:
